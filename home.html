@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Joseph's School</title>
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        body {
+            background-color: #fefde1; /* Pale cream background */
+            text-align: center;
+        }
+
+        /* Top Decorative Striped Border */
+        .top-stripe {
+            height: 14px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #b22222 0px, #b22222 3px,   /* Dark Red */
+                #ffffff 3px, #ffffff 5px,   /* White */
+                #000080 5px, #000080 8px,   /* Navy Blue */
+                #ffffff 8px, #ffffff 11px   /* White */
+            );
+            border-bottom: 1.5px solid #000;
+            width: 100%;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #c9b48c; /* Specific Tan/Beige color */
+            border-bottom: 1px solid #000;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .header-content {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box {
+            width: 85px;
+            height: 105px;
+            border: 1px solid #000;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-box img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .title-area {
+            flex-grow: 1;
+            color: #4a6491; /* Muted Blue color for text */
+        }
+
+        .title-area h1 {
+            font-size: 42px;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .title-area p.location {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .motto {
+            font-style: italic;
+            font-size: 14px;
+            color: #000;
+            position: absolute;
+            bottom: 10px;
+            left: 25%;
+        }
+
+        /* Navigation Menu */
+        nav {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-bar {
+            display: flex;
+            border: 1px solid #000;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: #000;
+            background-color: #00ffff; /* Cyan/Teal */
+            padding: 4px 30px;
+            font-size: 15px;
+            border-right: 1px solid #000;
+        }
+
+        .nav-bar a:last-child {
+            border-right: none;
+        }
+
+        /* Main Image Container */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .image-frame {
+            width: 60%; /* Proportional to the screenshot */
+            border: 0px solid #000;
+            line-height: 0;
+        }
+
+        .image-frame img {
+            width: 90%;
+            height: 90%;
+        }
+
+        /* Styles from mentors.html */
+        /* General Page Styling */
+        .mentors-body {
+            background-color: #fcf6cf; /* Pale yellowish background */
+            margin: 0;
+            padding: 40px;
+            font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", cursive;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mentors-wrapper {
+            max-width: 950px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Top Header Title Box */
+        .header-box {
+            border: 2px solid #9c1c1c; /* Dark red border */
+            background-color: #f1f1f1; /* Light grey background */
+            padding: 8px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 0 2px #000;
+        }
+
+        .header-box h1 {
+            color: #9c1c1c;
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .mentor-subtitle {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        /* Logo Containers */
+        .logo-section {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .logo-frame {
+            width: 210px;
+            height: 210px;
+            border: 2px solid #ff0000;
+            border-radius: 80px; /* Gives that unique rounded square/oval shape */
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .logo-frame img {
+            width: 85%;
+            height: auto;
+        }
+
+        /* Horizontal Line Separator */
+        .mentors-hr {
+            border: 0;
+            border-top: 1px solid #999;
+            margin-bottom: 20px;
+        }
+
+        /* Text Content Styling */
+        .location-info {
+            text-align: left;
+            font-family: "Times New Roman", Times, serif;
+            font-style: italic;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .main-description {
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14.5px;
+            line-height: 1.4;
+            color: #000;
+        }
+
+        /* Styles from facilities.html */
+        .facilities-body {
+            background-color: #FFFEE0; /* Pale yellow/cream background */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .facilities-wrapper {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        /* Top Banner with Dotted Border */
+        .main-header {
+            background-color: #808080; /* Grey background */
+            border: 5px dotted #3B3B7F; /* Dark blue/purple dotted border */
+            color: #FF69B4; /* Bright pink text */
+            text-align: center;
+            padding: 8px;
+            font-size: 22px;
+            font-family: serif;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        /* Facility Section Layout */
+        .facility-section {
+            margin-bottom: 25px;
+        }
+
+        /* Pink Header Strip */
+        .header-strip {
+            background-color: #FFC0CB; /* Pink banner */
+            color: #8B0000; /* Maroon/Dark Red text */
+            display: block;
+            padding: 4px 10px;
+            font-size: 19px;
+            font-family: "Arial Black", Gadget, sans-serif;
+            text-decoration: underline;
+            margin-bottom: 15px;
+        }
+
+        /* Content Text */
+        .content-text {
+            color: #A0522D; /* Sienna/Brownish text */
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14.5px;
+            line-height: 1.3;
+            padding-left: 25px;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* Styles from enquary.html */
+        .enquary-body {
+            background-color: #ffb6c1; /* Pink background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Yellow Form Container */
+        .form-card {
+            background-color: #ffff00; /* Bright yellow */
+            width: 320px;
+            padding: 15px;
+            border: 1px solid #777;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* Red Border Frame */
+        .enquary-fieldset {
+            border: 1px solid #b22222; /* Red border */
+            padding: 10px 15px 20px 15px;
+            margin: 0;
+        }
+
+        /* Red Title at the top */
+        .enquary-legend {
+            color: #b22222;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        /* Labels and Spacing */
+        .enquary-label {
+            display: block;
+            font-size: 13px;
+            margin-top: 12px;
+            margin-bottom: 4px;
+        }
+
+        /* Text Input Styling */
+        .enquary-input {
+            width: 100%;
+            border: 1px solid #999;
+            padding: 3px;
+            font-size: 14px;
+            box-sizing: border-box; /* Ensures width includes padding */
+        }
+
+        /* Radio Button Section */
+        .gender-container {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .gender-container .enquary-label {
+            display: inline;
+            margin: 0 10px 0 0;
+        }
+
+        /* Submit Button Styling */
+        .btn-submit {
+            margin-top: 20px;
+            padding: 2px 10px;
+            background-color: #efefef;
+            border: 1px solid #333;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-submit:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Styles from library.html */
+        .library-body {
+            background-color: #fdfbe4; /* Light cream/yellowish background */
+            margin: 0;
+            padding: 20px;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .library-container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        /* Grey Header Bar */
+        .header-bar {
+            background-color: #c0c0c0;
+            border: 1px solid #7a7a7a;
+            text-align: center;
+            padding: 4px 0;
+            font-weight: bold;
+            font-size: 15px;
+            color: #000;
+        }
+
+        /* Blue Section Container */
+        .section-box {
+            background-color: #4366db; /* Royal blue color from image */
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+            border-bottom: 2px solid #000;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+        }
+
+        /* White List Items */
+        .list-item {
+            background-color: #ffffff;
+            border: 1px solid #000;
+            margin-bottom: 8px;
+            padding: 8px 15px;
+            width: 50%; /* Matches the width seen in the image */
+            display: flex;
+            align-items: center;
+        }
+
+        /* Green Numbering */
+        .number {
+            color: #00cd00; /* Bright green */
+            font-style: italic;
+            font-weight: bold;
+            margin-right: 20px;
+            font-size: 18px;
+        }
+
+        /* Link Styling */
+        .book-link {
+            color: #00008b; /* Dark blue */
+            text-decoration: underline;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .book-link:hover {
+            color: #ff0000; /* Hover effect */
+        }
+
+        /* Styles from photogallery.html */
+        .gallery-body {
+            margin: 0;
+            padding: 0;
+            background-color: #FDF5E6; /* Light cream background */
+            font-family: "Times New Roman", Times, serif;
+            text-align: center;
+        }
+
+        /* Top Green Banner */
+        .top-green-bar {
+            background-color: #00FF00; /* Bright Green */
+            color: #0000FF; /* Blue text */
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 0;
+            border-top: 2px solid #00008B;
+            border-bottom: 2px solid #00008B;
+            margin-top: 10px;
+        }
+
+        /* Main Wrapper */
+        .gallery-container {
+            width: 95%;
+            margin: 20px auto;
+        }
+
+        /* Light Blue Section Headers */
+        .gallery-header {
+            background-color: #ADD8E6; /* Light Blue */
+            color: #483D8B; /* Darker Slate Blue */
+            padding: 12px;
+            font-size: 22px;
+            font-weight: bold;
+            border: 1px solid #777;
+            border-radius: 4px;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.2); /* Creates the 3D look */
+            margin: 20px 0;
+        }
+
+        /* Image Grid Layout */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
+            gap: 15px;
+            padding: 10px;
+            justify-items: center;
+        }
+
+        /* Individual Image Styling */
+        .photo-grid img {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 6px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            display: block;
+        }
+
+        /* Ensuring the lines at the very top match the image */
+        .top-lines {
+            border-top: 3px solid #00008B;
+            border-bottom: 1px solid #8B4513;
+            height: 5px;
+            margin-bottom: 2px;
+        }
+
+        /* Page sections */
+        .page-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-stripe"></div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-box">
+                <img src="https://www.stjosephsgugai.org/wp-content/uploads/2024/07/Logo-2.png" alt="Logo Left">
+            </div>
+            
+            <div class="title-area">
+                <h1>St.Joseph's School</h1>
+                <p class="location">Pipra Ramkishun, Basti</p>
+            </div>
+
+            <div class="logo-box">
+                <img src="https://www.stjosephsgugai.org/wp-content/uploads/2024/07/Logo-2.png" alt="Logo Right">
+            </div>
+        </div>
+        <span class="motto">To Learn To Love</span>
+    </header>
+
+    <nav>
+        <div class="nav-bar">
+            <a href="mentors.html">Our Mentor</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="enquary.html">Enquary</a>
+            <a href="library.html">Library</a>
+            <a href="photogallery.html">Photo Gallery</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="image-frame">
+            <img src="https://content.jdmagicbox.com/v2/comp/basti/p8/9999p5542.5542.200925231014.t7p8/catalogue/st-joseph-school-gandhi-nagar-basti-schools-gY5BN8e5sZ.jpg" alt="School View">
+        </div>
+    </div>
+
+    <div id="mentors" class="page-section">
+        <div class="mentors-body">
+            <div class="mentors-wrapper">
+                <div class="header-box">
+                    <h1>St. Joseph's School Basti</h1>
+                </div>
+
+                <div class="mentor-subtitle">They are our Mentors</div>
+
+                <div class="logo-section">
+                    <div class="logo-frame">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ6MdTyOwRvPRN_2npywJmIKQmBsaFzY0T2w&s" alt="School Logo Left">
+                    </div>
+                    <div class="logo-frame">
+</html>
