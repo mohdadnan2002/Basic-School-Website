@@ -3,6 +3,7 @@
 Welcome to the **Basic School Website** — a simple, responsive, and informative website designed for showcasing a school’s core features including home, facilities, library, photo gallery, mentors, and enquiry form.
 
 ---
+LIVE LINK : https://flourishing-fairy-a274f1.netlify.app/
 
 ## 📝 Overview
 
